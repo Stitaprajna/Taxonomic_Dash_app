@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import re
 
-df = pd.read_csv('text_segment2.csv')
+df = pd.read_csv('Taxonomic_breakdown_Dash_app/text_segment2.csv')
 df['child_category_score'] = df['child_category_score']*100
 df = df.rename(columns={'text':'Text', 'pagenum': 'Pagenum', 'doc_name': 'Doc_name' })
 l = sorted(df.parent_category.unique())
