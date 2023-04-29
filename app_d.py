@@ -11,6 +11,8 @@ df['breakdown_by'] = df['breakdown_by'].apply(lambda x: x.capitalize())
 df['breakdown_by'] = df['breakdown_by'].apply(lambda x: re.sub('[^a-zA-Z]',' ',x))
 
 app = Dash(__name__)
+server = app.server
+
 dropdown= html.Div([
     html.H1("Taxonomic Breakdown of Texts", style={'textAlign': 'center'}),
     html.H3('Parent Category:',style={'textAlign':'centre'}),
