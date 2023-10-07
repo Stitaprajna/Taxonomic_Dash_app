@@ -11,7 +11,7 @@ df['breakdown_by'] = df['breakdown_by'].apply(lambda x: x.capitalize())
 df['breakdown_by'] = df['breakdown_by'].apply(lambda x: re.sub('[^a-zA-Z]',' ',x))
 
 app = Dash(__name__)
-server = app.server
+
 
 dropdown= html.Div([
     html.H1("Taxonomic Breakdown of Texts", style={'textAlign': 'center'}),
@@ -98,5 +98,4 @@ def set_table_data(b,a,slider_range):
 
 
 if __name__ == '__main__':
-    # app.run_server(debug=True)
-    server.run(host='0.0.0.0', port='8050')
+    # app.run_server(host='0.0.0.0', port='8050',debug=True)
