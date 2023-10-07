@@ -11,6 +11,7 @@ df['breakdown_by'] = df['breakdown_by'].apply(lambda x: x.capitalize())
 df['breakdown_by'] = df['breakdown_by'].apply(lambda x: re.sub('[^a-zA-Z]',' ',x))
 
 app = Dash(__name__)
+application = app.server
 
 
 dropdown= html.Div([
@@ -98,4 +99,5 @@ def set_table_data(b,a,slider_range):
 
 
 if __name__ == '__main__':
-    app.run_server(host='0.0.0.0', port='8050',debug=True)
+    # app.run_server(host='0.0.0.0', port='8050',debug=True)
+    application.run(host='0.0.0.0', port='8080',debug=True)
